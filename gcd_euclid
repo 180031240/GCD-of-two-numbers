@@ -1,0 +1,33 @@
+//Euclid's algorithm to find GCD in C Language
+//Documented by R Girija
+#include<stdio.h>
+int min(int a , int b)
+{
+    if(a<b)
+    return a;
+    else
+    return b;
+}
+int max(int a,int b){
+if(a>b)
+return a;
+else
+return b;}
+int main()
+{
+    int m,n;
+    scanf("%d %d",&m,&n);
+    if(m<n)
+    {
+        int temp=m;
+        m=n;
+        n=temp;
+    }
+    while((m%n)!=0)
+    {
+        int diff=m-n;
+        m=max(n,diff);
+        n=min(n,diff);
+    }
+    printf("%d",n);
+}
